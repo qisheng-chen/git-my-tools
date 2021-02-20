@@ -20,6 +20,10 @@ for /f %%i in ('git remote show origin ^| findstr /ic:%branchkeyword%') do (
 
 endlocal
 
+:EchoInline
+  set text=%*
+  echo | set /p dummyName=%text%
+  goto :eof
 
 :EchoRed
     set text=%*
